@@ -18,6 +18,14 @@ header h1 {
     color: hsl(180, 90%, 20%);
 }
 
+header h1 a {
+    text-decoration: none;
+}
+
+header h1 a:visited {
+    color: unset;
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -32,3 +40,10 @@ footer {
     right: 0;
 }
 
+.form-content {
+    margin: 10px;
+}
+
+.form-buttons {
+    margin: 10px;
+}
