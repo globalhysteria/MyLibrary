@@ -1,0 +1,12 @@
+<h2>Search books</h2>
+
+<form action="/books" method="GET">
+    <label for="searchQuery">Search</label>
+    <input type="text" id="searchQuery" name="searchQuery" placeholder="Any match">
+    <br>
+    <button type="submit">Search</button>
+</form>
+
+<% books.forEach(book => { %>
+    <div class="book-item"><%= book.title %> <%= book.description %></div>
+<% }); %> 

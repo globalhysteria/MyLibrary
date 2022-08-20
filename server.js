@@ -2,6 +2,7 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const router = require('./routes/index');
 const authorsRouter = require('./routes/authors');
+const booksRouter = require('./routes/books');
 const mongoose = require('mongoose');
 
 const processEnv = (process.env.NODE_ENV === 'production') ?
@@ -27,6 +28,7 @@ app.use(express.static('public'));
 // though.
 app.use('/', router);
 app.use('/authors', authorsRouter);
+app.use('/books', booksRouter);
 
 mongoose.connect(processEnv.DATABASE_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
