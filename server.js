@@ -26,14 +26,14 @@ app.use(express.static('public'));
 // though.
 app.use(router);
 
-// mongoose.connect(processEnv.DATABASE_URL, { useNewUrlParser: true });
-// const db = mongoose.connection;
-// db.on('error', error => {
-//     console.log(error);
-// });
-// db.once('open', error => {
-//     console.log('Opened connection to Mongoose');
-// });
+mongoose.connect(processEnv.DATABASE_URL, { useNewUrlParser: true });
+const db = mongoose.connection;
+db.on('error', error => {
+    console.log(error);
+});
+db.once('open', error => {
+    console.log('Opened connection to Mongoose');
+});
 
 const port = processEnv.PORT || 3000;
 console.log("Port:", port);
